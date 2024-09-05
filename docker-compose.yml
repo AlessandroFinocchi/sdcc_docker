@@ -1,0 +1,338 @@
+version: '3'
+services:
+  registry:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_registry.git
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.253 # static ip of the container
+    ports: # ports mapping
+      - "12339:50051" # external_port:internal_port
+
+  host1:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.2 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12340:50152" # membership_port
+      - "12341:50153" # vivaldi_port
+      - "12342:50154" # gossip_port
+
+  host2:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.3 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12343:50152" # membership_port
+      - "12344:50153" # vivaldi_port
+      - "12345:50154" # gossip_port
+
+  host3:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.4 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12346:50152" # membership_port
+      - "12347:50153" # vivaldi_port
+      - "12348:50154" # gossip_port
+
+  host4:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.5 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12349:50152" # membership_port
+      - "12350:50153" # vivaldi_port
+      - "12351:50154" # gossip_port
+
+  host5:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.6 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12352:50152" # membership_port
+      - "12353:50153" # vivaldi_port
+      - "12354:50154" # gossip_port
+
+  host6:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.7 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12355:50152" # membership_port
+      - "12356:50153" # vivaldi_port
+      - "12357:50154" # gossip_port
+
+  host7:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.8 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12358:50152" # membership_port
+      - "12359:50153" # vivaldi_port
+      - "12360:50154" # gossip_port
+
+  host8:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.9 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12361:50152" # membership_port
+      - "12362:50153" # vivaldi_port
+      - "12363:50154" # gossip_port
+
+  host9:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.10 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12364:50152" # membership_port
+      - "12365:50153" # vivaldi_port
+      - "12366:50154" # gossip_port
+
+  host10:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.11 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12367:50152" # membership_port
+      - "12368:50153" # vivaldi_port
+      - "12369:50154" # gossip_port
+
+  host11:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.12 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12370:50152" # membership_port
+      - "12371:50153" # vivaldi_port
+      - "12372:50154" # gossip_port
+
+  host12:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.13 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12373:50152" # membership_port
+      - "12374:50153" # vivaldi_port
+      - "12375:50154" # gossip_port
+
+  host13:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.14 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12376:50152" # membership_port
+      - "12377:50153" # vivaldi_port
+      - "12378:50154" # gossip_port
+
+  host14:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.15 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12379:50152" # membership_port
+      - "12380:50153" # vivaldi_port
+      - "12381:50154" # gossip_port
+
+  host15:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.16 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12382:50152" # membership_port
+      - "12383:50153" # vivaldi_port
+      - "12384:50154" # gossip_port
+
+  host16:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.17 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12385:50152" # membership_port
+      - "12386:50153" # vivaldi_port
+      - "12387:50154" # gossip_port
+
+  host17:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.18 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12388:50152" # membership_port
+      - "12389:50153" # vivaldi_port
+      - "12390:50154" # gossip_port
+
+  host18:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.19 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12391:50152" # membership_port
+      - "12392:50153" # vivaldi_port
+      - "12393:50154" # gossip_port
+
+  host19:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.20 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12394:50152" # membership_port
+      - "12395:50153" # vivaldi_port
+      - "12396:50154" # gossip_port
+
+  host20:
+    build: # build the image
+      context: https://github.com/AlessandroFinocchi/sdcc_host.git
+    cap_add:
+      - NET_ADMIN # capability to use the netem delay
+    networks: # networks to connect
+      coordinates_network: # the name of the network
+        ipv4_address: 10.0.0.21 # static ip of the container
+    depends_on:
+      - registry
+    tty: true
+    ports: # ports mapping
+      - "12397:50152" # membership_port
+      - "12398:50153" # vivaldi_port
+      - "12399:50154" # gossip_port
+
+networks:
+  coordinates_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
+          gateway: 10.0.0.254
