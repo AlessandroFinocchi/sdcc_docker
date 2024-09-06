@@ -8,6 +8,8 @@ services:
         ipv4_address: 10.0.0.253 # static ip of the container
     ports: # ports mapping
       - "12339:50051" # external_port:internal_port
+    environment:
+      - LOGGING=1
 
   host1:
     build: # build the image
@@ -24,6 +26,11 @@ services:
       - "12340:50152" # membership_port
       - "12341:50153" # vivaldi_port
       - "12342:50154" # gossip_port
+    environment:
+      - LOGGING=0
+      - MEMBERSHIP_LOGGING=1
+      - VIVALDI_LOGGING=0
+      - GOSSIPING_LOGGING=0
 
   host2:
     build: # build the image
@@ -40,6 +47,11 @@ services:
       - "12343:50152" # membership_port
       - "12344:50153" # vivaldi_port
       - "12345:50154" # gossip_port
+    environment:
+      - LOGGING=0
+      - MEMBERSHIP_LOGGING=0
+      - VIVALDI_LOGGING=1
+      - GOSSIPING_LOGGING=0
 
   host3:
     build: # build the image
@@ -56,6 +68,11 @@ services:
       - "12346:50152" # membership_port
       - "12347:50153" # vivaldi_port
       - "12348:50154" # gossip_port
+    environment:
+      - LOGGING=0
+      - MEMBERSHIP_LOGGING=0
+      - VIVALDI_LOGGING=0
+      - GOSSIPING_LOGGING=1
 
   host4:
     build: # build the image
@@ -72,6 +89,11 @@ services:
       - "12349:50152" # membership_port
       - "12350:50153" # vivaldi_port
       - "12351:50154" # gossip_port
+    environment:
+      - LOGGING=1
+      - MEMBERSHIP_LOGGING=0
+      - VIVALDI_LOGGING=0
+      - GOSSIPING_LOGGING=0
 
   host5:
     build: # build the image
@@ -84,6 +106,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12352:50152" # membership_port
       - "12353:50153" # vivaldi_port
@@ -100,6 +124,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12355:50152" # membership_port
       - "12356:50153" # vivaldi_port
@@ -116,6 +142,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12358:50152" # membership_port
       - "12359:50153" # vivaldi_port
@@ -132,6 +160,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12361:50152" # membership_port
       - "12362:50153" # vivaldi_port
@@ -148,6 +178,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12364:50152" # membership_port
       - "12365:50153" # vivaldi_port
@@ -164,6 +196,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12367:50152" # membership_port
       - "12368:50153" # vivaldi_port
@@ -180,6 +214,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12370:50152" # membership_port
       - "12371:50153" # vivaldi_port
@@ -196,6 +232,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12373:50152" # membership_port
       - "12374:50153" # vivaldi_port
@@ -212,6 +250,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12376:50152" # membership_port
       - "12377:50153" # vivaldi_port
@@ -228,6 +268,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12379:50152" # membership_port
       - "12380:50153" # vivaldi_port
@@ -244,6 +286,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12382:50152" # membership_port
       - "12383:50153" # vivaldi_port
@@ -260,6 +304,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12385:50152" # membership_port
       - "12386:50153" # vivaldi_port
@@ -276,6 +322,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12388:50152" # membership_port
       - "12389:50153" # vivaldi_port
@@ -292,6 +340,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12391:50152" # membership_port
       - "12392:50153" # vivaldi_port
@@ -308,6 +358,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12394:50152" # membership_port
       - "12395:50153" # vivaldi_port
@@ -324,6 +376,8 @@ services:
     depends_on:
       - registry
     tty: true
+    env_file:
+      - .env
     ports: # ports mapping
       - "12397:50152" # membership_port
       - "12398:50153" # vivaldi_port
