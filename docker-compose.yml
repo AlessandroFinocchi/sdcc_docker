@@ -9,7 +9,7 @@ services:
     ports: # ports mapping
       - "12339:50051" # external_port:internal_port
     environment:
-      - LOGGING=1
+      - LOGGING=0
 
   host1:
     build: # build the image
@@ -28,7 +28,7 @@ services:
       - "12342:50154" # gossip_port
     environment:
       - LOGGING=0
-      - MEMBERSHIP_LOGGING=1
+      - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
       - GOSSIPING_LOGGING=0
 
@@ -72,7 +72,7 @@ services:
       - LOGGING=0
       - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
-      - GOSSIPING_LOGGING=1
+      - GOSSIPING_LOGGING=0
 
   host4:
     build: # build the image
@@ -90,7 +90,7 @@ services:
       - "12350:50153" # vivaldi_port
       - "12351:50154" # gossip_port
     environment:
-      - LOGGING=1
+      - LOGGING=0
       - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
       - GOSSIPING_LOGGING=0
