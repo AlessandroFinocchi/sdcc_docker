@@ -27,7 +27,8 @@ services:
       - "12342:50154" # gossip_port
     environment:
       - LOGGING=0
-      - MEMBERSHIP_LOGGING=1
+      - RESULT_LOGGING=0
+      - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
       - GOSSIPING_LOGGING=0
 
@@ -48,9 +49,12 @@ services:
       - "12345:50154" # gossip_port
     environment:
       - LOGGING=0
+      - RESULT_LOGGING=1
       - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=1
       - GOSSIPING_LOGGING=0
+    volumes:
+      - ./data:/data
 
   host3:
     build: # build the image
@@ -69,9 +73,10 @@ services:
       - "12348:50154" # gossip_port
     environment:
       - LOGGING=0
+      - RESULT_LOGGING=0
       - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
-      - GOSSIPING_LOGGING=1
+      - GOSSIPING_LOGGING=0
 
   host4:
     build: # build the image
@@ -89,7 +94,8 @@ services:
       - "12350:50153" # vivaldi_port
       - "12351:50154" # gossip_port
     environment:
-      - LOGGING=1
+      - LOGGING=0
+      - RESULT_LOGGING=0
       - MEMBERSHIP_LOGGING=0
       - VIVALDI_LOGGING=0
       - GOSSIPING_LOGGING=0
