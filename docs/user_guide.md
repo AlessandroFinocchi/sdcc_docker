@@ -22,3 +22,12 @@ To run on aws:
 5. Inside sdcc_docker run the following command to start the application:
 
     ``` sudo docker-compose up ```
+
+## Note about certificates
+If certificates are expired or not working, you can generate new ones by running the following command inside 
+sdcc_host (or sdcc_registry):
+
+    make cert
+
+it will create the new certificates and keys on the cert directory of sdcc_host (or sdcc_registry), but remember to 
+share that directory with sdcc_registry (or sdcc_host) because the two services need to share the same certificates.
