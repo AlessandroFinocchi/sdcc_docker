@@ -1,15 +1,16 @@
 # User guide
 
-To run the application, clone this repository and run the following commands at the root of the project:
-
+## Start docker
 To start the containerized application, run the following command:
 
 ``` make docker_gen ```
 
+## Stop docker
 To stop and remove all the containers, run the following command
 
 ``` make docker_clean ```
 
+## Run the application on aws
 To run on aws:
 1. Run an instance from "sdcc_template"
 2. After instance is up-and-running, ssh into the instance
